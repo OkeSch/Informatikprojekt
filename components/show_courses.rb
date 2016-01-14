@@ -20,7 +20,7 @@ __END__
 	<tr>
 		<td>
 			<% @trainer = get_trainer(course["course_trainer_id"]) %>
-					<div class="course_<%=course["course_typ_id"]%>" >
+					<div class="course a<%=course["course_typ_id"]%>" >
 						<table width=100% align=center>
 							<tr>
 								<td colspan=3 width=50% valign="middle" align="center"><h2> <%=course["course_name"] %> </h2></td>

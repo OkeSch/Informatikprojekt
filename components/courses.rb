@@ -15,13 +15,6 @@ enable :inline_templates
 
 __END__
 @@courses
-<head>
-	<style>
-		course_typ_1 {
-			background-color: black;
-		}
-	</style>
-</head>
   <section>
     <p>Unsere Kurse:</p>
       <% @course_t = get_all_course_t %>
@@ -30,7 +23,7 @@ __END__
 				<tr>
 					<td>
 						<a href="/courses/<%=course_type["course_typ_id"]%>">
-						<div class="course_type<%= course_type["course_typ_id"]%>">				
+						<div class="coursetype a<%= course_type["course_typ_id"]%>">				
 						</div>
 						</a>
 					</td>

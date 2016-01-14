@@ -73,54 +73,35 @@ a:active {
 		.urgent {
 				 background-color:#FFAA00;
 		}
-		.course_1 {
+		.course {
 			width: 800px;
 			min-height: 100px;
+			background-position: left bottom;
+			background-repeat: repeat-x;
+			border-style: solid;
+			border-radius: 50px;
+			border-width: 2px;
+
+	}
+		.course.a1 {
 			background-image: url("/backgrounds/background_c1.png");
-			background-position: left bottom;
-			background-repeat: repeat-x;
-			border-style: solid;
-			border-radius: 50px;
-			border-width: 2px;
 		}
-		.course_2 {
-			width: 800px;
-			min-height: 100px;
+		.course.a2 {
 			background-image: url("/backgrounds/background_c2.png");
-			background-position: left bottom;
-			background-repeat: repeat-x;
-			border-style: solid;
-			border-radius: 50px;
-			border-width: 2px;
 		}
-		.course_3 {
-			width: 800px;
-			min-height: 100px;
-			background-image: url("/backgrounds/background_c3.png");
-			background-position: left bottom;
-			background-repeat: repeat-x;
-			border-style: solid;
-			border-radius: 50px;
-			border-width: 2px;		
+		.course.a3 {
+			background-image: url("/backgrounds/background_c3.png");	
 		}
-		.course_4 {
-			width: 800px;
-			min-height: 100px;
-			background-image: url("/backgrounds/background_c4.png");
-			background-position: left bottom;
-			background-repeat: repeat-x;
-			border-style: solid;
-			border-radius: 50px;
-			border-width: 2px;		
+		.course.a4 {
+			background-image: url("/backgrounds/background_c4.png");	
 		}
-		.course_5 {
-			width: 800px;
-			min-height: 100px;
-			background-color: hotpink; 
-			border-style: solid;
-			border-radius: 50px;
-			border-width: 2px;		
+		.course.a5 {
+			background-color: hotpink; 	
 		}
+		.course.a6 {
+			background-color: green; 	
+		}
+
 		.trainer {
 			width: 800px;
 			min-height: 100px;
@@ -141,45 +122,45 @@ a:active {
 			#trainer_weiblich {
 			background: url("/backgrounds/trainer_bg_w_0.png");
 			}
-		.course_type1 {
+		.coursetype {
 			width: 800px;
 			height: 200px;
+		}
+		.coursetype.a1 {
 			background: url("/banners/courses_1_0.png");
 		}
-		.course_type1:hover {
+		.coursetype.a1:hover {
 			background: url("/banners/courses_1_1.png");
 		}
-		.course_type2 {
-			width: 800px;
-			height: 200px;
+		.coursetype.a2 {
 			background: url("/banners/courses_2_0.png");
 		}
-		.course_type2:hover {
+		.coursetype.a2:hover {
 			background: url("/banners/courses_2_1.png");
 		}
-		.course_type3 {
-			width: 800px;
-			height: 200px;
+		.coursetype.a3 {
 			background: url("/banners/courses_3_0.png");
 		}
-		.course_type3:hover {
+		.coursetype.a3:hover {
 			background: url("/banners/courses_3_1.png");
 		}
-		.course_type4 {
-			width: 800px;
-			height: 200px;
+		.coursetype.a4 {
 			background: url("/banners/courses_4_0.png");
 		}
-		.course_type4:hover {
+		.coursetype.a4:hover {
 			background: url("/banners/courses_4_1.png");
 		}
-		.course_type5 {
-			width: 800px;
-			height: 200px;
+		.coursetype.a5 {
 			background-color: blue;
 		}
-		.course_type5:hover {
+		.coursetype.a5:hover {
 			background-color: orange;
+		}
+		.coursetype.a6 {
+			background-color: green;
+		}
+		.coursetype.a6:hover {
+			background-color: yellow;
 		}
 		.pic_thumb {
 			width: 250px;
