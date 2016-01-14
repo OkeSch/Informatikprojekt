@@ -23,11 +23,13 @@ __END__
 			<tr>
 				<td>
 					<a href="/trainer/<%= trainer["trainer_id"] %>">
-						<div class="trainer">
-							<table width="100%">
+						<div class="trainer" id="trainer_<%=trainer["trainer_sex"]%>">
+							<table width="100%" cellpadding="10">
 								<tr>
+									<td width="10%" rowspan="4"></td>
 									<td align="center"><h2><%=trainer["trainer_speech"]%></h2></td>
 									<td align=right rowspan=3><div class="pic_thumb" id="pt_<%=trainer["trainer_id"]%>"</div></td>
+									<td width="10%" rowspan="4"></td>
 										<script>
 											document.getElementById('pt_<%=trainer["trainer_id"]%>').style.backgroundImage = "url('<%=trainer["trainer_thumbpath"]%>')";
 										</script>

@@ -20,11 +20,11 @@ a:visited {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a:active {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 		html, body, ul.nav {
@@ -125,12 +125,22 @@ a:active {
 			width: 800px;
 			min-height: 100px;
 			background-color: #D2E2FF;
-			border-radius: 25px;
 			font-family: decorative;
+			border-radius: 75px;
 			color: black;
-			padding-left: 8px;
-			padding-right: 15px;
+			border-top-style:  solid;
+			border-bottom-style: solid;
+			border-width: 2px;
 		}
+			.trainer:hover {
+				border-color: gray;
+		}
+			#trainer_männlich {
+			background: url("/backgrounds/trainer_bg_m_0.png");
+			}
+			#trainer_weiblich {
+			background: url("/backgrounds/trainer_bg_w_0.png");
+			}
 		.course_type1 {
 			width: 800px;
 			height: 200px;
@@ -182,6 +192,14 @@ a:active {
 			margin-right: 10px;
 			margin-bottom: 10px;
 		}
+
+		#footer{
+			width: 500px;
+			border-width: 2px;
+			border-style: solid;
+			text-align: center;
+			border-radius: 10px;
+		}
 	</style>
 </head>
 	<body>
@@ -197,8 +215,31 @@ a:active {
 		        </ul>   
 		    </nav>
 		 </header>
-		
+		<br>
+		<br>
 		<%= yield %>
+		<br>
+		<br>
+		<div id="footer">
+			<table width="100%" align="center">
+				<tr>
+					<td>
+						<a href="/home"><b>Start</b></a>
+					</td>
+					<td>
+						<a href="/courses"><b>Kurse</b></a>
+					</td>
+					<td>
+						<a href="/trainer"><b>Trainer</b></a>
+					</td>
+					<td>
+						<a href="/contact"><b>Impressum</b></a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<br>
 		</div>
 	</body>
 </html>
