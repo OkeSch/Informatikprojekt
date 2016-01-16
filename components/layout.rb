@@ -182,14 +182,20 @@ a:active {
 			border-radius: 10px;
 		}
 		.time_div{
-			width:100px;
-			height:30px;
-			background-color: black;
-			border-width: 1px;
-			border-style: solid;
+			width:75px;
+			height:20px;
+			background-color: blue;
+			border-width: 0px;
+			border-style: none;
 			margin: 0px;
 			padding: 0px;
-
+	}
+		#time_table{
+			border-collapse: collapse;
+			border-width: 0px;
+			border-style: none;
+			margin-left:auto;
+			margin-right:auto;
 	}
 	</style>
 </head>
