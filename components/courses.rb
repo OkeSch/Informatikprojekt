@@ -22,8 +22,8 @@ __END__
 			<% @course_t.each do |course_type|%>
 				<tr>
 					<td>
-						<a href="/courses/<%=course_type["course_typ_id"]%>">
-						<div class="coursetype a<%= course_type["course_typ_id"]%>">				
+						<a href="/courses/<%=course_type["course_type_id"]%>">
+						<div class="coursetype a<%= course_type["course_type_id"]%>">				
 						</div>
 						</a>
 					</td>

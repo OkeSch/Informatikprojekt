@@ -112,9 +112,9 @@ __END__
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2" cellpadding="0">
+		<td cellpadding="0">
 		<b>Trainingszeiten:</b>
-		<table border="0">
+		<table id="time_table">
 			<tr>
 				<td width=100px></td>
 				<% @days = get_all_days %>
@@ -149,8 +149,11 @@ __END__
 			<% time_m = (time["day"]+(time["day"]*36))+time["time"]-37%>
 			<script>
 				document.getElementById('td_<%=time_m%>').style.backgroundColor = "red";
+				document.getElementById('td_<%=time_m%>').href = "/course/<%=time["course"]%>";
 			</script>
 		<% end %>
+		</td>
+		<td>
 		</td>
 	</tr>
 </table>
