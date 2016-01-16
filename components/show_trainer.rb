@@ -2,6 +2,18 @@ def get_trainer(trainer_id)
   return sql("SELECT * FROM trainer WHERE trainer_id='" + trainer_id.to_s + "';")
 end
 
+def get_all_days
+	return sql("SELECT * FROM course_days;")
+end
+
+def get_all_times
+	return sql("SELECT * FROM course_times;")
+end
+
+def get_course_times(trainer_id)
+	return sql("SELECT course_m_times.* FROM course_m_times , courses , trainer WHERE course_m_times.course = courses.course_id AND courses.course_trainer_id = '" + trainer_id.to_s + "';")
+end
+
 def get_courses(course_trainer_id)
   return sql("SELECT * FROM courses WHERE course_trainer_id='" + course_trainer_id.to_s + "';")
 end
@@ -9,7 +21,9 @@ end
 get '/trainer/:id' do
 @this_trainer = get_trainer(params[:id])
 @title="Trainer - "+@this_trainer[0]["trainer_name"]
+@all_times = get_all_times
 @courses = get_courses(params[:id])
+@course_times = get_course_times(params[:id])
 erb :show_trainer
 end
 
@@ -95,6 +109,48 @@ __END__
 					</div>
 				<hr>
 			<%end%>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" cellpadding="0">
+		<b>Trainingszeiten:</b>
+		<table border="0">
+			<tr>
+				<td width=100px></td>
+				<% @days = get_all_days %>
+				<% @days.each do |day| %>
+					<td>
+						<b><%= day["day_name"]%></b>
+					</td>
+				<%end%>
+			</tr>
+			<% 	x=1
+				while x < 37
+			%>
+			<tr>
+				<td rowspan="1">
+					<%=@all_times[(x-1)]["time"]%>
+				</td>
+				<% 	y=1
+					while y < 8
+				%>
+					<%field_no = (y+(y*36))+x-37%>
+					<td>
+						<div class="time_div" id="td_<%=field_no%>">
+						</div>
+					</td>
+					<%y += 1 %>
+				<% end %>
+				</tr>
+				<%x += 1 %>
+			<%end%>
+		</table>
+		<% @course_times.each do |time| %>
+			<% time_m = (time["day"]+(time["day"]*36))+time["time"]-37%>
+			<script>
+				document.getElementById('td_<%=time_m%>').style.backgroundColor = "red";
+			</script>
+		<% end %>
 		</td>
 	</tr>
 </table>

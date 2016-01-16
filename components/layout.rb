@@ -181,6 +181,16 @@ a:active {
 			text-align: center;
 			border-radius: 10px;
 		}
+		.time_div{
+			width:100px;
+			height:30px;
+			background-color: black;
+			border-width: 1px;
+			border-style: solid;
+			margin: 0px;
+			padding: 0px;
+
+	}
 	</style>
 </head>
 	<body>
