@@ -135,10 +135,14 @@ __END__
 					while y < 8
 				%>
 					<%field_no = (y+(y*36))+x-37%>
+					
 					<td>
+						<a href="" id="a_<%=field_no%>">
 						<div class="time_div" id="td_<%=field_no%>">
 						</div>
+						</a>
 					</td>
+					
 					<%y += 1 %>
 				<% end %>
 				</tr>
@@ -149,7 +153,7 @@ __END__
 			<% time_m = (time["day"]+(time["day"]*36))+time["time"]-37%>
 			<script>
 				document.getElementById('td_<%=time_m%>').style.backgroundColor = "red";
-				document.getElementById('td_<%=time_m%>').href = "/course/<%=time["course"]%>";
+				document.getElementById('a_<%=time_m%>').href = "/course/<%=time["course"]%>";
 			</script>
 		<% end %>
 		</td>
