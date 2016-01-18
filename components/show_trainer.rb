@@ -11,7 +11,7 @@ def get_all_times
 end
 
 def get_course_times(trainer_id)
-	return sql("SELECT course_m_times.* FROM course_m_times , courses , trainer WHERE course_m_times.course = courses.course_id AND courses.course_trainer_id = '" + trainer_id.to_s + "';")
+	return sql("SELECT course_m_times.*, courses.* FROM course_m_times , courses , trainer WHERE course_m_times.course = courses.course_id AND courses.course_trainer_id = '" + trainer_id.to_s + "';")
 end
 
 def get_courses(course_trainer_id)
@@ -112,7 +112,7 @@ __END__
 		</td>
 	</tr>
 	<tr>
-		<td cellpadding="0">
+		<td colspan="2" cellpadding="0">
 		<b>Trainingszeiten:</b>
 		<table id="time_table">
 			<tr>
@@ -135,14 +135,12 @@ __END__
 					while y < 8
 				%>
 					<%field_no = (y+(y*36))+x-37%>
-					
 					<td>
-						<a href="" id="a_<%=field_no%>">
-						<div class="time_div" id="td_<%=field_no%>">
-						</div>
+						<a id="tf_<%=field_no%>">
+							<div class="time_div" id="td_<%=field_no%>">
+							</div>
 						</a>
 					</td>
-					
 					<%y += 1 %>
 				<% end %>
 				</tr>
@@ -153,11 +151,9 @@ __END__
 			<% time_m = (time["day"]+(time["day"]*36))+time["time"]-37%>
 			<script>
 				document.getElementById('td_<%=time_m%>').style.backgroundColor = "red";
-				document.getElementById('a_<%=time_m%>').href = "/course/<%=time["course"]%>";
+				document.getElementById('tf_<%=time_m%>').href = "/course/<%=time["course_id"]%>"
 			</script>
 		<% end %>
-		</td>
-		<td>
 		</td>
 	</tr>
 </table>
