@@ -81,6 +81,9 @@ a:active {
 			border-style: solid;
 			border-radius: 50px;
 			border-width: 2px;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-top: 10px;
 
 	}
 		.course.a1 {
@@ -112,6 +115,9 @@ a:active {
 			border-top-style:  solid;
 			border-bottom-style: solid;
 			border-width: 2px;
+			padding-left: 10px;
+			padding-right: 20px;
+			padding-top: 20px;
 		}
 			.trainer:hover {
 				border-color: gray;
@@ -182,21 +188,22 @@ a:active {
 			border-radius: 10px;
 		}
 		.time_div{
-			width:75px;
-			height:20px;
-			background-color: blue;
-			border-width: 0px;
-			border-style: none;
+			width:100px;
+			height:30px;
+			background-color: black;
+			border-width: 1px;
+			border-style: solid;
 			margin: 0px;
 			padding: 0px;
-	}
+		}
 		#time_table{
 			border-collapse: collapse;
 			border-width: 0px;
 			border-style: none;
 			margin-left:auto;
 			margin-right:auto;
-	}
+
+		}
 	</style>
 </head>
 	<body>
