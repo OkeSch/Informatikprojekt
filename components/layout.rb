@@ -215,7 +215,7 @@ a:active {
 		          <li><a href="/" title="Home">Home</a></li>
 		          <li><a href="/courses" title="Kurse">Kurse</a></li>
 		          <li><a href="/trainer" title="Trainer">Trainer</a></li>
-		          <li><a href="/contact" title="Contact">Contact</a></li>
+		          <li><a href="/myfit" title="MyFit">MyFit</a></li>
 		        </ul>   
 		    </nav>
 		 </header>
