@@ -37,7 +37,7 @@ enable :inline_templates
 __END__
 @@register
 
-<div class="register"
+<div class="regist"
 	<table>
 		<form action="/register" method="post">
 			<tr>
@@ -47,37 +47,37 @@ __END__
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="vorname" placeholder="Vorname"></br>
+					<input type="text" name="vorname" placeholder="Vorname" class="regist a"></br>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="nachname" placeholder="Nachname"></br>
+					<input type="text" name="nachname" placeholder="Nachname" class="regist a"></br>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="username" placeholder="Benutzername"></br>
+					<input type="text" name="username" placeholder="Benutzername" class="regist a"></br>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="email" name="email" placeholder="E-Mail"></br>
+					<input type="email" name="email" placeholder="E-Mail" class="regist a"></br>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="password" name="password" placeholder="Passwort"></br>
+					<input type="password" name="password" placeholder="Passwort" class="regist a"></br>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="password" name="password_confirmation" placeholder="Bestätigung"></br>
+					<input type="password" name="password_confirmation" placeholder="Bestätigung" class="regist a"></br>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="submit" value="Registrieren">
+					<input type="submit" value="Registrieren" class="regist btn">
 				</td>
 			</tr>
 		</form>

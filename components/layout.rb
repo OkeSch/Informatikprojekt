@@ -8,6 +8,45 @@ __END__
 <head>
 	<title><%=@title%></title>
 	<style>
+		#navigation {
+position: fixed;
+top: 0;
+width: 100%;
+color: #ffffff;
+height: 35px;
+text-align: center;
+padding-top: 15px;
+/* Adds shadow to the bottom of the bar */
+-webkit-box-shadow: 0px 0px 8px 0px #000000;
+-moz-box-shadow: 0px 0px 8px 0px #000000;
+box-shadow: 0px 0px 8px 0px #000000;
+/* Adds the transparent background */
+background-color: rgba(1, 1, 1, 0.8);
+color: rgba(1, 1, 1, 0.8);
+}
+
+#navigation a {
+font-size: 14px;
+padding-left: 15px;
+padding-right: 15px;
+color: white;
+text-decoration: none;
+}
+
+#navigation a:hover {
+color: grey;
+}
+#nav.user_div {
+		position: right;
+		height: 30px;
+		width: 50px;
+		top: 0;
+		background-color: grey;
+		padding-right: 25px;
+		border-style: solid;
+		border-width: 2px;
+		border-color: white;
+} 
 		body {
 			font-family: sans-serif;
 		}
@@ -26,6 +65,14 @@ a:hover {
 a:active {
     text-decoration: none;
 }
+		.h_bar {
+			width: 100%;
+			height: 80px;
+			background: url("/backgrounds/bar_bg.png");
+			background-position: left;
+			background-repeat: repeat-x;
+
+	}
 
 		html, body, ul.nav {
 			margin: 0px;
@@ -204,21 +251,58 @@ a:active {
 			margin-right:auto;
 
 		}
+		.regist{
+			width: 25%;
+			border-radius: 25px;
+			border-style: 2px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: black;
+			text-align: center;
+		}
+		.regist.a {
+			font-weight: bold;
+			width: 50%;
+			height: 50px;
+			font-size: 22px;
+			opacity: 0.3;
+		}
+		.regist.a:focus{
+			opacity: 1;
+	}
+		.regist.a:visited{
+			opacity: 1;
+	}
+		.regist.btn{
+			width: 20px;
+			height:5px;
+
+	}
 	</style>
 </head>
 	<body>
 		<div align=center>
 		<header>
-		    <h1><%= @title %></h1>
-		    <nav>
-		        <ul class="nav">
-		          <li><a href="/" title="Home">Home</a></li>
-		          <li><a href="/courses" title="Kurse">Kurse</a></li>
-		          <li><a href="/trainer" title="Trainer">Trainer</a></li>
-		          <li><a href="/myfit" title="MyFit">MyFit</a></li>
-		        </ul>   
-		    </nav>
+		    <div id="navigation">
+		    	<table align="center" width="100%">
+		    	<tr>
+		    		<td width="25%">
+		    		<td align="center">
+		    			<a href="/home">Start</a>
+		    			<a href="/trainer">Trainer</a>
+		    			<a href="/courses">Kurse</a>
+		    			<a href="/myfit">MyFit</a>
+		    		</td>
+		    		<td width="25%" align="right">
+		    			<div id="nav user_div">
+		    				<a href="/login">Login</a>
+		    			</div>
+		    		</td>
+				</tr>
+			</table>
+		    </div>
 		 </header>
+		<br>
 		<br>
 		<br>
 		<%= yield %>

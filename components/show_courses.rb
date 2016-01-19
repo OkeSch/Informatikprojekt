@@ -16,7 +16,7 @@ enable :inline_templates
 __END__
 @@show_courses
 <table>  
-			<% @courses.each do |course| %>
+	<% @courses.each do |course| %>
 	<tr>
 		<td>
 			<% @trainer = get_trainer(course["course_trainer_id"]) %>

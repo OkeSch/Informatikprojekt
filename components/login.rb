@@ -15,18 +15,42 @@ def query_user_by_id(id)
         return benutzer[0]
     end
 end
-get '/login' do
-	@title="Login"
-	erb :login
+
+
+get "/login" do
+    erb :login
 end
+
+post "/login" do
+    if params[:username] == "" || params[:password] == "" then
+        redirect to("/login")
+    end
+
+    user = query_user(params[:username])
+    if user == nil then
+        redirect to("/login")
+    end
+
+    if not valid_password?(params[:password], user["hash"]) then
+        redirect to("/login")
+    end
+
+    login user
+end
+
+get "/logout" do
+    logout
+end
+
 enable :inline_templates
 
 __END__
-@@login
+
+@@ login
 
 <div class="login">
-	<table>
-		<form action="/login" method="post">
+	<form action="/login" method="post">
+		<table>
 			<tr>
 				<td>
 					<h2>Login</h2>
@@ -50,6 +74,6 @@ __END__
 			<tr>
 				<td><a href="/register">Jetzt registrieren!</a></td>
 			</tr>
-		</form>
-	</table>
+		</table>
+	</form>
 </div>
