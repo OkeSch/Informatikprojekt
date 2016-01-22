@@ -153,7 +153,7 @@ a:active {
 		}
 
 		.trainer {
-			width: 800px;
+			width: 770px;
 			min-height: 100px;
 			background-color: #D2E2FF;
 			font-family: decorative;
