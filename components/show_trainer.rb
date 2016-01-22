@@ -83,7 +83,7 @@ __END__
 				</table>
 			</div>
 		</td>
-		<td>
+		<td rowspan="2">
 			<% @courses.each do |course| %>
 					<div class="course a<%=course["course_typ_id"]%>" >
 						<table width=100% align=center>
@@ -111,42 +111,12 @@ __END__
 			<%end%>
 		</td>
 	</tr>
+	</br>
+	</br>
 	<tr>
-		<td colspan="2" cellpadding="0">
-		<b>Trainingszeiten:</b>
-		<table id="time_table">
-			<tr>
-				<td width=100px></td>
-				<% @days = get_all_days %>
-				<% @days.each do |day| %>
-					<td>
-						<b><%= day["day_name"]%></b>
-					</td>
-				<%end%>
-			</tr>
-			<% 	x=1
-				while x < 37
-			%>
-			<tr>
-				<td rowspan="1">
-					<%=@all_times[(x-1)]["time"]%>
-				</td>
-				<% 	y=1
-					while y < 8
-				%>
-					<%field_no = (y+(y*36))+x-37%>
-					<td>
-						<a id="tf_<%=field_no%>">
-							<div class="time_div" id="td_<%=field_no%>">
-							</div>
-						</a>
-					</td>
-					<%y += 1 %>
-				<% end %>
-				</tr>
-				<%x += 1 %>
-			<%end%>
-		</table>
+		<td cellpadding="0" align="left">
+		<b>Trainingszeiten:</b><br><br>
+		<%=time_table %>
 		<% @course_times.each do |time| %>
 			<% time_m = (time["day"]+(time["day"]*36))+time["time"]-37%>
 			<script>

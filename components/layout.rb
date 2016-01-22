@@ -235,8 +235,8 @@ a:active {
 			border-radius: 10px;
 		}
 		.time_div{
-			width:100px;
-			height:30px;
+			width:25px;
+			height:10px;
 			background-color: black;
 			border-width: 1px;
 			border-style: solid;
@@ -247,8 +247,7 @@ a:active {
 			border-collapse: collapse;
 			border-width: 0px;
 			border-style: none;
-			margin-left:auto;
-			margin-right:auto;
+			position: center;
 
 		}
 		.regist{
