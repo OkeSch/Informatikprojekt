@@ -1,3 +1,4 @@
+Dir.chdir(File.dirname(__FILE__))
 require "sinatra"
 require 'sinatra/reloader' if development?
 
@@ -10,6 +11,10 @@ Dir[File.join("components","*.rb")].each do |file|
     require_relative name
 end
 
+Dir[File.join("components/elements","*.rb")].each do |file|
+    name = File.join(File.dirname(file), File.basename(file, ".rb"))
+    require_relative name
+end
 get "/" do
 	@title="Startseite"
 	if logged_in? then
