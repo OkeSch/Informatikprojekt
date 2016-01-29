@@ -15,7 +15,7 @@ def get_course_times(trainer_id)
 end
 
 def get_courses(course_trainer_id)
-  return sql("SELECT * FROM courses WHERE course_trainer_id='" + course_trainer_id.to_s + "';")
+  return sql("SELECT * FROM courses WHERE course_trainer_id = '" + course_trainer_id.to_s + "';")
 end
 
 get '/trainer/:id' do
@@ -24,6 +24,7 @@ get '/trainer/:id' do
 @all_times = get_all_times
 @courses = get_courses(params[:id])
 @course_times = get_course_times(params[:id])
+@url = 'trainer/'+ params[:id].to_s
 erb :show_trainer
 end
 
@@ -107,8 +108,11 @@ __END__
 							</tr>
 						</table>
 					</div>
-				<hr>
 			<%end%>
+			<hr>
+			<div class="comments">
+					<%=comments(@url)%>
+				</div>
 		</td>
 	</tr>
 	</br>

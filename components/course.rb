@@ -10,6 +10,7 @@ get '/course/:id' do
   @title="Kurse"
   @course = get_all_course_inf(params[:id])
   @trainer = get_trainer_inf(@course[0]["course_trainer_id"])
+  @url = 'course/'+ params[:id].to_s
   erb :course
 end
 
@@ -88,4 +89,10 @@ __END__
 				</div>
 			</td>
 		</tr>
+		<tr>
+			<td>
+				<div class="comments">
+					<%=comments(@url)%>
+				</div>
+			<td>
 	</table>
