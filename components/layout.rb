@@ -8,6 +8,10 @@ __END__
 <head>
 	<title><%=@title%></title>
 	<style>
+		@font-face{
+			font-family: 'Fontin';
+			src: url('/fonts/Fontin-Regular.ttf') format('truetype');
+	}
 		#navigation {
 position: fixed;
 top: 0;
@@ -146,7 +150,7 @@ a:active {
 			background-image: url("/backgrounds/background_c4.png");	
 		}
 		.course.a5 {
-			background-color: hotpink; 	
+			background-image: url("/backgrounds/background_c5.png"); 	
 		}
 		.course.a6 {
 			background-color: green; 	
@@ -204,10 +208,10 @@ a:active {
 			background: url("/banners/courses_4_1.png");
 		}
 		.coursetype.a5 {
-			background-color: blue;
+			background: url("/banners/courses_5_0.png");
 		}
 		.coursetype.a5:hover {
-			background-color: orange;
+			background: url("/banners/courses_5_1.png");
 		}
 		.coursetype.a6 {
 			background-color: green;
@@ -251,7 +255,7 @@ a:active {
 
 		}
 		.regist{
-			width: 25%;
+			width: 50%;
 			border-radius: 25px;
 			border-style: 2px;
 			border-width: 1px;
@@ -268,15 +272,49 @@ a:active {
 		}
 		.regist.a:focus{
 			opacity: 1;
-	}
+		}
 		.regist.a:visited{
 			opacity: 1;
-	}
+		}
 		.regist.btn{
 			width: 20px;
 			height:5px;
 
+		}
+		.comments{
+			border-style: solid;
+			border-width: 1px;
+			width: 100%;
+			min-height: 300px;
+			border-radius: 30px;
+			padding: 10px 10px 10px 10px;
+			border-color: grey;
+		}
+		.comment{
+			border-style: solid;
+			border-width: 1px;
+			border-radius: 10px;
+			border-collapse: collapse;
+		}
+		.comment.name{
+			width: 20%;
 	}
+		.comment.name a{
+			color: blue;
+			font-size: 20px;
+			font-family: Fontin;
+				}
+		.comment.content{
+			padding-left: 10px;
+			color: brown;
+			font-size: 18px;
+			font-family: Fontin;
+	}
+		.comment form{
+			height: 100%;
+		}
+
+
 	</style>
 </head>
 	<body>
@@ -294,7 +332,11 @@ a:active {
 		    		</td>
 		    		<td width="25%" align="right">
 		    			<div id="nav user_div">
-		    				<a href="/login">Login</a>
+		    				<% if logged_in? then %>
+		    					<a href="/logout"><%=current_user['username']%></a>
+		    				<%else
+		    					%><a href="/login">Login</a><%
+		    					end %>
 		    			</div>
 		    		</td>
 				</tr>
