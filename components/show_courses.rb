@@ -51,8 +51,7 @@ __END__
 						</tr>
 					</table>
 				</div>
-			<hr>
-		</td>
-	</tr>
+			</td>
+		</tr>
 	<%end%>
 </table>

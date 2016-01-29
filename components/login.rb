@@ -1,5 +1,5 @@
 def query_user(name)
-    benutzer = sql "SELECT * FROM users WHERE user_username='" + name + "' LIMIT 1;"
+    benutzer = sql "SELECT username, hash, user_id FROM users WHERE username='" + name + "' LIMIT 1;"
     if benutzer.size != 1 then
         return nil
     else
@@ -8,7 +8,7 @@ def query_user(name)
 end
 
 def query_user_by_id(id)
-    benutzer = sql "SELECT * FROM users WHERE user_id='" + id.to_s + "' LIMIT 1;"
+    benutzer = sql "SELECT username, hash FROM users WHERE id='" + id.to_s + "' LIMIT 1;"
     if benutzer.size != 1 then
         return nil
     else
