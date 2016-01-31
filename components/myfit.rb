@@ -1,9 +1,7 @@
 get '/myfit' do
   @title="MyFit"
-  if logged_in? then
-		redirect to "/myfit"
-	else
-		redirect to "/login"
+  if not logged_in? then
+		redirect to "/login?err=5"
 	end
   erb :myfit
 end

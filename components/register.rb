@@ -38,48 +38,49 @@ enable :inline_templates
 __END__
 @@register
 
-<div class="regist"
-	<h1><%=@timedate%></h1>
-	<table>
-		<form action="/register" method="post">
+´<div class="login"
+	<form action="/register" method="post">	
+		<table>
 			<tr>
-				<td>
-					<h2>Registrieren</h2>
+				<td align="center" colspan="2">
+					<h1>Registrieren</h1>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="vorname" placeholder="Vorname" class="regist a">
+					<input class="login_form" type="text" name="vorname" placeholder="Vorname">
 				</td>
 				<td>
-					<input type="email" name="email" placeholder="E-Mail" class="regist a"></br>
+					<input class="login_form" type="text" name="nachname" placeholder="Nachname"></br>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="nachname" placeholder="Nachname" class="regist a">
+					<input class="login_form" type="text" name="username" placeholder="Benutzername"></br>					
 				</td>
 				<td>
-					<input type="password" name="password" placeholder="Passwort" class="regist a"></br>
+					<input class="login_form" type="email" name="email" placeholder="E-Mail">	
+					
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="username" placeholder="Benutzername" class="regist a">
+					<input class="login_form" type="password" name="password" placeholder="Passwort">									
 				</td>
 				<td>
-					<input type="password" name="password_confirmation" placeholder="Bestätigung" class="regist a"></br>
+					<input class="login_form" type="password" name="password_confirmation" placeholder="Bestätigung"></br>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2">
-					<input type="submit" value="Registrieren" class="regist btn">
+				<td colspan="2" align="center">
+					<input type="submit" class="button login" value="Registrieren">
 				</td>
 			</tr>
 		</form>
 			<tr>
-				<td>
-					Bereits registriert? </br>
+				<td colspan="2" align="center">
+					<br>
+					Bereits Mitglied? </br>
 					<a href="/login">Melde dich an</a>
 				</td>
 			</tr>
