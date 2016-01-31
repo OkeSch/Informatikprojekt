@@ -7,6 +7,11 @@ def get_trainer_inf(trainer_id)
 end
 
 get '/course/:id' do
+	if params[:state] != nil then
+		@state = 1
+	else
+		@state = 0
+	end
   @title="Kurse"
   @course = get_all_course_inf(params[:id])
   @trainer = get_trainer_inf(@course[0]["course_trainer_id"])
@@ -18,6 +23,19 @@ enable :inline_templates
 
 __END__
 @@course
+<script type="text/javascript">
+	$(document).ready(function(){
+    /* Hier der jQuery-Code */
+    	$('#comment_btn').click(function(){
+    		$('#comment_div').show('650');
+    		$('#comment_btn').hide()
+    })
+    	<% if @state == 1 then
+    		%>  $('#comment_div').show('fast');
+    			$('#comment_btn').hide('fast');
+    		<%end%>
+});
+</script>
 	<table>
 		<tr>
 			<td>
@@ -90,9 +108,10 @@ __END__
 			</td>
 		</tr>
 		<tr>
-			<td>
-				<div class="comments">
+			<td align="center">
+				<div class="comments" id="comment_div">
 					<%=comments(@url)%>
 				</div>
+				<button class="button" id="comment_btn">Kommentieren</>
 			<td>
 	</table>
