@@ -7,6 +7,7 @@ __END__
 <html>
 <head>
 	<title><%=@title%></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<style>
 		@font-face{
 			font-family: 'Fontin';
@@ -82,6 +83,7 @@ a:active {
 			margin: 0px;
 			border: 0px;
 			padding: 0px;
+			font-family: Fontin
 		}
 
 		th {
@@ -254,33 +256,6 @@ a:active {
 			position: center;
 
 		}
-		.regist{
-			width: 50%;
-			border-radius: 25px;
-			border-style: 2px;
-			border-width: 1px;
-			border-style: solid;
-			border-color: black;
-			text-align: center;
-		}
-		.regist.a {
-			font-weight: bold;
-			width: 50%;
-			height: 50px;
-			font-size: 22px;
-			opacity: 0.3;
-		}
-		.regist.a:focus{
-			opacity: 1;
-		}
-		.regist.a:visited{
-			opacity: 1;
-		}
-		.regist.btn{
-			width: 20px;
-			height:5px;
-
-		}
 		.comments{
 			border-style: solid;
 			border-width: 1px;
@@ -310,9 +285,84 @@ a:active {
 			font-size: 18px;
 			font-family: Fontin;
 	}
-		.comment form{
+		.comment_form{
 			height: 100%;
+			width: 100%;
+			font-family: Fontin;
+			font-size: 20px;
+			color: black;
 		}
+		.button{
+			padding: 20px 30px;
+			font-family: Fontin;
+			color: black;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 20px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.2s; /* Safari */
+    		transition-duration: 0.25s;
+    		cursor: pointer;
+    		border: 2px solid #585858;
+    		border-radius: 10px;
+    		position: center;
+	}
+			.button.login{
+				border: solid 3px #B40404;
+				background-color: white;
+				color: #B40404;
+				border-radius: 50px;
+				padding: 10px 15px; 
+		}
+		.button.login:hover{
+				border: solid 3px black;
+				background-color: #B40404;
+				color: black;
+				border-radius: 50px;
+				padding: 10px 15px;
+		}
+			.button:hover {
+    		background-color: #585858;
+    		color: white;
+		}
+			#comment_div{
+				display: none;
+		}
+			.input_field{
+				width: 100%;
+				height: 100px;
+				border-top: solid 1px;
+				position: bottom;
+
+		}
+			.comment_input{
+				width: 100%;
+				height: 100%;
+
+		}
+		 	.login_form{
+		 		padding: 5px 20px;
+		 		text-align: center;
+		 		border-radius: 10px;
+		 		font-family: Fontin;
+		 		color: black;
+		 		font-size: 20px;
+		 }
+		 	.falselogin{
+		 		width: 300px;
+		 		border: 2px solid #FF0000;
+		 		background-color: #F78181;
+		 		border-radius: 30px;
+		 		text-align: center;
+		 		display: none;
+		 		padding: 0px;
+		 		position: fixed;
+		 		font-size: 20px;
+
+
+		 		
+		 }
 
 
 	</style>
