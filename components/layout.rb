@@ -38,6 +38,20 @@ color: white;
 text-decoration: none;
 }
 
+#k_head{
+	position: fixed;
+	width: 100%;
+	height: 30px;
+	color: black;
+	text-align: center;
+	padding-top: 0px;
+}
+#k_head a {
+font-size: 14px;
+color: black;
+text-decoration: none;
+}
+
 #navigation a:hover {
 color: grey;
 }
@@ -258,7 +272,7 @@ a:active {
 		}
 		.comments{
 			border-style: solid;
-			border-width: 1px;
+			border-width: 0px;
 			width: 100%;
 			min-height: 300px;
 			border-radius: 30px;
@@ -267,23 +281,41 @@ a:active {
 		}
 		.comment{
 			border-style: solid;
+			border-width: 0px;
+			border-radius: 10px;
+			border-collapse: collapse;
+			transition-duration: 0.02s;
+		}
+		.comment:hover{
+			border-style: solid;
 			border-width: 1px;
 			border-radius: 10px;
 			border-collapse: collapse;
+			transition-duration: 0.02s;
+
 		}
 		.comment.name{
 			width: 20%;
+			text-align: right;
 	}
 		.comment.name a{
 			color: blue;
 			font-size: 20px;
 			font-family: Fontin;
+			transition-duration: 0.5s;
+				}
+			.comment.name:hover a{
+			color: black;
+			font-size: 20px;
+			font-family: Fontin;
+			
 				}
 		.comment.content{
 			padding-left: 10px;
 			color: brown;
 			font-size: 18px;
 			font-family: Fontin;
+			border: none;
 	}
 		.comment_form{
 			height: 100%;
@@ -292,6 +324,9 @@ a:active {
 			font-size: 20px;
 			color: black;
 		}
+		.comment.time{
+			border: none;
+	}
 		.button{
 			padding: 20px 30px;
 			font-family: Fontin;
@@ -301,7 +336,6 @@ a:active {
 			display: inline-block;
 			font-size: 20px;
 			margin: 4px 2px;
-			-webkit-transition-duration: 0.2s; /* Safari */
     		transition-duration: 0.25s;
     		cursor: pointer;
     		border: 2px solid #585858;
@@ -363,8 +397,126 @@ a:active {
 
 		 		
 		 }
-
-
+		 article.infobox section {
+    position: absolute;
+    display: block;
+    width: 400px;
+    height: 200px;
+    top: 100px;
+    background-color: #c5d2de;
+}
+	.tabreiter
+{
+    width: 100%;
+    height: 500px;
+}   
+ 
+.tabreiter ul,
+.tabreiter li
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ 
+.tabreiter,
+.tabreiter input[type="radio"]:checked + label
+{
+    position: relative;
+}
+ 
+.tabreiter li,
+.tabreiter input[type="radio"] + label
+{
+    display: inline-block;
+}
+ 
+.tabreiter li > div,
+.tabreiter input[type="radio"]
+{
+    position: absolute;
+}
+ 
+.tabreiter li > div,
+.tabreiter input[type="radio"] + label
+{
+    border: solid 1px #ccc;
+}
+ 
+.tabreiter
+{
+    font-family: Arial, Sans-serif;
+	font-size: 1em;
+	font-weight: 400;
+    color: #404040;
+}
+ 
+.tabreiter li
+{
+    vertical-align: top;
+}
+ 
+.tabreiter li:first-child
+{
+    margin-left: 8px;
+}
+ 
+.tabreiter li > div
+{
+    top: 33px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px;
+    overflow: auto;
+    background: #fff;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ 
+.tabreiter input[type="radio"] + label
+{
+    margin: 0 2px 0 0;
+    padding: 0 18px;
+    line-height: 32px;
+    background: #f1f1f1;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+ 
+.tabreiter input[type="radio"]:checked + label
+{
+    z-index: 1;
+    background: #fff;
+    border-bottom-color: #fff;
+    cursor: default;
+}
+ 
+.tabreiter input[type="radio"]
+{
+    opacity: 0;
+}
+ 
+.tabreiter input[type="radio"] ~ div
+{
+    display: none;
+}
+ 
+.tabreiter input[type="radio"]:checked:not(:disabled) ~ div
+{
+    display: block;
+}
+ 
+.tabreiter input[type="radio"]:disabled + label
+{
+    opacity: .5;
+    cursor: no-drop;
+}
 	</style>
 </head>
 	<body>
