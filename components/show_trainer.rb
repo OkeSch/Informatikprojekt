@@ -84,12 +84,22 @@ __END__
 				</table>
 			</div>
 		</td>
-		<td rowspan="2">
-			<% @courses.each do |course| %>
-					<div class="course a<%=course["course_typ_id"]%>" >
+	</tr>
+	<tr>
+		<td align="center">
+			<div class="tabreiter">
+    		<ul>
+		        <li>
+		            <input type="radio" name="tabreiter-0" checked="checked" id="tabreiter-0-0" /><label for="tabreiter-0-0">Kurse</label>
+		            <div>
+		            	<div id="k_head">
+		                <a>Kurse</a>
+		                </div>
+		                <% @courses.each do |course| %>
+						<div class="course a<%=course["course_typ_id"]%>" >
 						<table width=100% align=center>
 							<tr>
-								<td colspan=3 width=50% valign="middle" align="center"><h2> <%=course["course_name"] %> </h2></td>
+								<td colspan=3 width=50% valign="middle" align="center"><a href="/course/<%=course["course_id"]%>"><h2> <%=course["course_name"] %> </h2></a></td>
 							</tr>
 							<tr>
 								<td><b>Trainer/in: </b></td>
@@ -109,25 +119,28 @@ __END__
 						</table>
 					</div>
 			<%end%>
-			<hr>
-			<div class="comments">
-					<%=comments(@url)%>
+		                </div>
+		        </li><li>
+		            <input type="radio" name="tabreiter-0" id="tabreiter-0-1" /><label for="tabreiter-0-1">Trainingszeiten</label>
+		            <div>
+			            <b>Trainingszeiten:</b><br><br>
+							<%=time_table %>
+							<% @course_times.each do |time| %>
+							<% time_m = (time["day"]+(time["day"]*36))+time["time"]-37%>
+						<script>
+							document.getElementById('td_<%=time_m%>').style.backgroundColor = "red";
+							document.getElementById('tf_<%=time_m%>').href = "/course/<%=time["course_id"]%>"
+						</script>
+					<% end %>
 				</div>
-		</td>
-	</tr>
-	</br>
-	</br>
-	<tr>
-		<td cellpadding="0" align="left">
-		<b>Trainingszeiten:</b><br><br>
-		<%=time_table %>
-		<% @course_times.each do |time| %>
-			<% time_m = (time["day"]+(time["day"]*36))+time["time"]-37%>
-			<script>
-				document.getElementById('td_<%=time_m%>').style.backgroundColor = "red";
-				document.getElementById('tf_<%=time_m%>').href = "/course/<%=time["course_id"]%>"
-			</script>
-		<% end %>
-		</td>
-	</tr>
+		        </li><li>
+		        	<input type="radio" name="tabreiter-0" id="tabreiter-0-2" /><label for="tabreiter-0-2">Kommentare</label>
+		        		<div class="comments">
+							<%=comments(@url)%>
+						</div>
+					</li>
+		    </ul>
+		</div>
+	</td>
+</tr>
 </table>
