@@ -29,8 +29,6 @@ post "/register" do
 	user = query_user(user["username"])
 
 	login user
-
-
 end
 
 enable :inline_templates
@@ -38,7 +36,7 @@ enable :inline_templates
 __END__
 @@register
 
-´<div class="login"
+<div class="login">
 	<form action="/register" method="post">	
 		<table>
 			<tr>
@@ -72,11 +70,11 @@ __END__
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center">
-					<input type="submit" class="button login" value="Registrieren">
+				<td align="center" colspan="2">
+					<input type="submit" value="Registrieren" class="button login">
 				</td>
 			</tr>
-		</form>
+		
 			<tr>
 				<td colspan="2" align="center">
 					<br>
@@ -85,4 +83,5 @@ __END__
 				</td>
 			</tr>
 	</table>
+	</form>
 </div>
