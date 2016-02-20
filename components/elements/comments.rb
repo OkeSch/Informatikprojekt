@@ -67,7 +67,7 @@ $(document).ready(function(){
 							<table class="comment" width="100%">
 								<tr>
 									<td class="comment name">
-										<a href=""><%=comment["username"]%></a>
+										<a href="/myfit?user=<%=comment["user_id"]%>""><%=comment["username"]%>: </a>
 									</td>
 									<td class="comment content">
 										<%=comment["content"] %>
